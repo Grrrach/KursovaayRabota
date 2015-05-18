@@ -44,6 +44,7 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
     set(hObject,'BackgroundColor','white');
 end
 
+%This code work normal, don`t change it
 function pushbutton1_Callback(hObject, eventdata, handles)
 n=get(handles.popupmenu1,'Value');
 A=get(handles.uitable1,'Data');
