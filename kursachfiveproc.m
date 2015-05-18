@@ -52,7 +52,7 @@ C=get(handles.uitable2,'Data');
 r=rank([A C]);
 R=rank(A);
 d=n+1;
-
+%Thank you for error massage. Can you take some change into Git?
 if  r<d;
     errordlg('Ñèñòåìà ëèíåéíî çàâèñèìà', 'Îøèáêà ââîäà');
     set(handles.text2,'String','Ïîâòîðèòå ââîä', 'Visible', 'On');
