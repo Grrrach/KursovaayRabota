@@ -16,8 +16,6 @@ else
     gui_mainfcn(gui_State, varargin{:});
 end
 
-
-
 function kursachfiveproc_OpeningFcn(hObject, eventdata, handles, varargin)
 handles.output = hObject;
 
@@ -26,7 +24,6 @@ function varargout = kursachfiveproc_OutputFcn(hObject, eventdata, handles)
 varargout{1} = handles.output;
 
 function popupmenu1_Callback(hObject, eventdata, handles)
-
 
 set(handles.text9, 'Visible' ,'on');
 
@@ -41,13 +38,11 @@ Dat=zeros(n+1,1);
 C=true(1,n+2);
 set(handles.uitable2,'Data',Dat,'ColumnEditable',C)
 
-
 function popupmenu1_CreateFcn(hObject, eventdata, handles)
 
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
     set(hObject,'BackgroundColor','white');
 end
-
 
 function pushbutton1_Callback(hObject, eventdata, handles)
 n=get(handles.popupmenu1,'Value');
@@ -58,12 +53,12 @@ R=rank(A);
 d=n+1;
 
 if  r<d;
-    errordlg('Ñèñòåìà ëèíåéíî çàâèñèìà', 'Îøèáêà ââîäà');
-    set(handles.text2,'String','Ïîâòîðèòå ââîä', 'Visible', 'On');
+    errordlg('Ã‘Ã¨Ã±Ã²Ã¥Ã¬Ã  Ã«Ã¨Ã­Ã¥Ã©Ã­Ã® Ã§Ã Ã¢Ã¨Ã±Ã¨Ã¬Ã ', 'ÃŽÃ¸Ã¨Ã¡ÃªÃ  Ã¢Ã¢Ã®Ã¤Ã ');
+    set(handles.text2,'String','ÃÃ®Ã¢Ã²Ã®Ã°Ã¨Ã²Ã¥ Ã¢Ã¢Ã®Ã¤', 'Visible', 'On');
 else
     if R<d;
-       errordlg('Ñèñòåìà âûðîæäåíà', 'Îøèáêà ââîäà'); 
-       set(handles.text2,'String','Ïîâòîðèòå ââîä', 'Visible', 'On');
+       errordlg('Ã‘Ã¨Ã±Ã²Ã¥Ã¬Ã  Ã¢Ã»Ã°Ã®Ã¦Ã¤Ã¥Ã­Ã ', 'ÃŽÃ¸Ã¨Ã¡ÃªÃ  Ã¢Ã¢Ã®Ã¤Ã '); 
+       set(handles.text2,'String','ÃÃ®Ã¢Ã²Ã®Ã°Ã¨Ã²Ã¥ Ã¢Ã¢Ã®Ã¤', 'Visible', 'On');
     else
     x=A\C;
     q = transpose(x);
@@ -72,10 +67,10 @@ else
 end
 
 function pushbutton2_Callback(hObject, eventdata, handles)
-msgbox({'Âàñ ïðèâåòñòâóåò ïðîãðàììà äëÿ ðåøåíèÿ ÑËÀÓ',' ',...
-       'Äàííàÿ ïðîãðàììà èìååò ñëåäóþùèå îñîáåííîñòè:',' ',...
-       '- ðåøåíèå ÑËÀÓ íå áîëåå ÷åì èç øåñòè óðàâíåíèé;',...
-       '- îáõîä ÿ÷ååê îñóùåñòâëÿåòñÿ ïðè ïîìîùè êëàâèøè Tab;',...
-       '- äëÿ ïåðåõîäà ìåæäó ìàòðèöàìè èñïîëüçóéòå äâîéíîé ùåë÷åê.'...
-          }, 'Ïîìîùü', 'none');
+msgbox({'Ã‚Ã Ã± Ã¯Ã°Ã¨Ã¢Ã¥Ã²Ã±Ã²Ã¢Ã³Ã¥Ã² Ã¯Ã°Ã®Ã£Ã°Ã Ã¬Ã¬Ã  Ã¤Ã«Ã¿ Ã°Ã¥Ã¸Ã¥Ã­Ã¨Ã¿ Ã‘Ã‹Ã€Ã“',' ',...
+       'Ã„Ã Ã­Ã­Ã Ã¿ Ã¯Ã°Ã®Ã£Ã°Ã Ã¬Ã¬Ã  Ã¨Ã¬Ã¥Ã¥Ã² Ã±Ã«Ã¥Ã¤Ã³Ã¾Ã¹Ã¨Ã¥ Ã®Ã±Ã®Ã¡Ã¥Ã­Ã­Ã®Ã±Ã²Ã¨:',' ',...
+       '- Ã°Ã¥Ã¸Ã¥Ã­Ã¨Ã¥ Ã‘Ã‹Ã€Ã“ Ã­Ã¥ Ã¡Ã®Ã«Ã¥Ã¥ Ã·Ã¥Ã¬ Ã¨Ã§ Ã¸Ã¥Ã±Ã²Ã¨ Ã³Ã°Ã Ã¢Ã­Ã¥Ã­Ã¨Ã©;',...
+       '- Ã®Ã¡ÃµÃ®Ã¤ Ã¿Ã·Ã¥Ã¥Ãª Ã®Ã±Ã³Ã¹Ã¥Ã±Ã²Ã¢Ã«Ã¿Ã¥Ã²Ã±Ã¿ Ã¯Ã°Ã¨ Ã¯Ã®Ã¬Ã®Ã¹Ã¨ ÃªÃ«Ã Ã¢Ã¨Ã¸Ã¨ Tab;',...
+       '- Ã¤Ã«Ã¿ Ã¯Ã¥Ã°Ã¥ÃµÃ®Ã¤Ã  Ã¬Ã¥Ã¦Ã¤Ã³ Ã¬Ã Ã²Ã°Ã¨Ã¶Ã Ã¬Ã¨ Ã¨Ã±Ã¯Ã®Ã«Ã¼Ã§Ã³Ã©Ã²Ã¥ Ã¤Ã¢Ã®Ã©Ã­Ã®Ã© Ã¹Ã¥Ã«Ã·Ã¥Ãª.'...
+          }, 'ÃÃ®Ã¬Ã®Ã¹Ã¼', 'none');
 
